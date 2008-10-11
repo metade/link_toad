@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.test_files = [
     "spec/link_toad_spec.rb"
   ]
-  s.rdoc_options = ["--main", "README", "-x example*"]
+  s.rdoc_options = ["--main", "README", "-x", "example", "-x", "spec"]
   s.extra_rdoc_files = ["README"]
   s.add_dependency("hpricot", ["> 0.0.0"])
 end

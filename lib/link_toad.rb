@@ -6,10 +6,15 @@ require 'yaml'
 class LinkToad
   attr_reader :mapping
   
+  # +mapping+ is a hash mapping from a URL to an identifier
+  # that should be associated with that URL.  
   def initialize(mapping)
     @mapping = mapping
   end
   
+  # Returns the identifiers for the document at the given +url+.
+  #
+  # Identifiers are found by looking up links in the document in the +mapping+ hash.  
   def match(url)
     links = links_from_url(url)
     links.map { |l| hits_for_uri(l) }.flatten.uniq
