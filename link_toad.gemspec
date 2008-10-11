@@ -11,13 +11,16 @@ Gem::Specification.new do |s|
   s.files    = [
     "README",
     "lib/link_toad.rb",
+    "lib/link_toad/music_link_toad.rb",
     "examples/musicbrainz/guardian/README",
     "examples/musicbrainz/guardian/guardian-music-news.rb",
     "examples/musicbrainz/guardian/guardian-musicbrainz.rb",
-    "examples/musicbrainz/guardian/guardian-musicbrainz.yml"
+    "examples/musicbrainz/guardian/guardian-musicbrainz.yml",
   ]
   s.test_files = [
-    "spec/link_toad_spec.rb"
+    "spec/spec_helper.rb",
+    "spec/link_toad_spec.rb",
+    "spec/music_link_toad_spec.rb",
   ]
   s.rdoc_options = ["--main", "README", "-x", "example", "-x", "spec"]
   s.extra_rdoc_files = ["README"]

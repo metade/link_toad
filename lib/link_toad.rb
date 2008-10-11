@@ -3,6 +3,8 @@ require 'hpricot'
 require 'open-uri'
 require 'yaml'
 
+$: << File.expand_path(File.dirname(__FILE__))
+
 class LinkToad
   attr_reader :mapping
   
@@ -20,7 +22,7 @@ class LinkToad
     links.map { |l| hits_for_uri(l) }.flatten.uniq
   end
   
-  private
+  protected
   
   def links_from_url(url)
     doc = Hpricot(open(url))
