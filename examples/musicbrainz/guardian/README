@@ -1,0 +1,13 @@
+These scripts enable news items on the Guardian RSS feed to be associated to a particular MusicBrainz artist.
+
+guardian-musicbrainz.rb
+-----------------------
+
+* pulls in the full list of music related tag from the guardian web site
+* for each sensible-looking tag it searches MusicBrainz for a matching artist
+* it outputs a YAML file mapping Guardian tag URLs to artist GUIDs
+
+guardian-music-news.rb
+----------------------
+
+Uses the mapping produced by +guardian-musicbrainz.rb+ to associate stories from the Guardian Music RSS feed to MusicBrainz artist.

@@ -1,0 +1,48 @@
+= link_toad
+
+* http://github.com/metade/link_toad
+
+== DESCRIPTION:
+
+LinkToad is a general purpose equivalency engine that uses hyperlinks.
+
+== USAGE:
+
+require 'rubygems'
+require 'link_toad'
+
+# mapping of artist-related URLs to MusicBrainz artist identifier
+mapping = { 
+  'http://www.arcticmonkeys.com/' => 'ada7a83c-e3e1-40f1-93f9-3e73dbc9298a',
+}
+toad = LinkToad.new(mapping)
+
+# match a news story linking to the Arctic Monkeys homepage
+toad.match('http://news.bbc.co.uk/1/hi/entertainment/7664082.stm')
+=> ["ada7a83c-e3e1-40f1-93f9-3e73dbc9298a"]
+
+See +examples/+ for more details. 
+
+== LICENSE:
+
+The MIT License
+
+Copyright (c) 2008 Patrick Sinclair
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
